@@ -1,4 +1,4 @@
-service: newrelic-log-ingestion
+service: kmullaney-newrelic-log-ingestion
 
 provider:
   name: aws
@@ -33,10 +33,10 @@ package:
     - ./src/function.py
 
 functions:
-  newrelic-log-ingestion:
+  kmullaney-newrelic-log-ingestion:
     description: Send log data from CloudWatch Logs to New Relic Infrastructure (Cloud Integrations) and New Relic Logging.
     handler: src/function.lambda_handler
-    name: newrelic-log-ingestion
+    name: kmullaney-newrelic-log-ingestion
 
 plugins:
   - serverless-python-requirements
