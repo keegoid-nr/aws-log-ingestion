@@ -1,8 +1,8 @@
-service: newrelic-log-ingestion
+service: kmullaney-log-ingestion-39
 
 provider:
   name: aws
-  runtime: python3.7
+  runtime: python3.9
   stage: production
   timeout: 30
 
@@ -33,10 +33,10 @@ package:
     - ./src/function.py
 
 functions:
-  newrelic-log-ingestion:
+  kmullaney-log-ingestion-39:
     description: Send log data from CloudWatch Logs to New Relic Infrastructure (Cloud Integrations) and New Relic Logging.
     handler: src/function.lambda_handler
-    name: newrelic-log-ingestion
+    name: kmullaney-log-ingestion-39
 
 plugins:
   - serverless-python-requirements

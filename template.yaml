@@ -55,7 +55,7 @@ Conditions:
 
 Metadata:
   AWS::ServerlessRepo::Application:
-    Name: NewRelic-log-ingestion
+    Name: kmullaney-log-ingestion-39
     Description: Send log data from CloudWatch Logs to New Relic Infrastructure (Cloud Integrations) and New Relic Logging.
     Author: New Relic
     SpdxLicenseId: Apache-2.0
@@ -74,10 +74,10 @@ Resources:
       CodeUri: src/
       Description: Sends log data from CloudWatch Logs to New Relic Infrastructure (Cloud integrations) and New Relic Logging
       Handler: function.lambda_handler
-      FunctionName: newrelic-log-ingestion
+      FunctionName: kmullaney-log-ingestion-39
       MemorySize:
         Ref: MemorySize
-      Runtime: python3.7
+      Runtime: python3.9
       PermissionsBoundary: !If [ HasPermissionBoundary, !Ref PermissionsBoundary, !Ref AWS::NoValue ]
       Role: !Sub arn:${AWS::Partition}:iam::${AWS::AccountId}:role/${FunctionRole}
       Timeout:
@@ -96,10 +96,10 @@ Resources:
       CodeUri: src/
       Description: Sends log data from CloudWatch Logs to New Relic Infrastructure (Cloud integrations) and New Relic Logging
       Handler: function.lambda_handler
-      FunctionName: newrelic-log-ingestion
+      FunctionName: kmullaney-log-ingestion-39
       MemorySize:
         Ref: MemorySize
-      Runtime: python3.7
+      Runtime: python3.9
       PermissionsBoundary: !If [ HasPermissionBoundary, !Ref PermissionsBoundary, !Ref AWS::NoValue ]
       Timeout:
         Ref: Timeout
