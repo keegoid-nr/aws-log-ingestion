@@ -55,14 +55,14 @@ Conditions:
 
 Metadata:
   AWS::ServerlessRepo::Application:
-    Name: NewRelic-log-ingestion
+    Name: kmullaney-log-ingestion
     Description: Send log data from CloudWatch Logs to New Relic Infrastructure (Cloud Integrations) and New Relic Logging.
     Author: New Relic
     SpdxLicenseId: Apache-2.0
     LicenseUrl: LICENSE
     ReadmeUrl: README.md
     HomePageUrl: https://github.com/newrelic/aws-log-ingestion
-    SemanticVersion: 2.6.4
+    SemanticVersion: 2.7.0
     SourceCodeUrl: https://github.com/newrelic/aws-log-ingestion
 
 Resources:
@@ -74,7 +74,7 @@ Resources:
       CodeUri: src/
       Description: Sends log data from CloudWatch Logs to New Relic Infrastructure (Cloud integrations) and New Relic Logging
       Handler: function.lambda_handler
-      FunctionName: newrelic-log-ingestion
+      FunctionName: kmullaney-log-ingestion
       MemorySize:
         Ref: MemorySize
       Runtime: python3.9
@@ -96,7 +96,7 @@ Resources:
       CodeUri: src/
       Description: Sends log data from CloudWatch Logs to New Relic Infrastructure (Cloud integrations) and New Relic Logging
       Handler: function.lambda_handler
-      FunctionName: newrelic-log-ingestion
+      FunctionName: kmullaney-log-ingestion
       MemorySize:
         Ref: MemorySize
       Runtime: python3.9

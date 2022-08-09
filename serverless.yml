@@ -1,10 +1,21 @@
-service: newrelic-log-ingestion
+service: kmullaney-log-ingestion
+
+useDotenv: true
 
 provider:
   name: aws
+  region: eu-west-1
   runtime: python3.9
-  stage: production
+  stage: dev
   timeout: 30
+  tags:
+    owner: kmullaney
+    reason: ticket
+    description: "00056260"
+  stackTags:
+    owner: kmullaney
+    reason: ticket
+    description: "00056260"
 
   # Uncomment this line to use your own IAM role
   #role: arn:aws:iam::YourAccountNumber:role/YourIamRole
@@ -21,22 +32,21 @@ provider:
 
 custom:
   pythonRequirements:
-    dockerizePip: true
+    dockerizePip: false
     fileName: ./src/requirements.txt
 
 package:
   exclude:
     - ./**
   include:
-
     - ./LICENSE
     - ./src/function.py
 
 functions:
-  newrelic-log-ingestion:
+  kmullaney-log-ingestion:
     description: Send log data from CloudWatch Logs to New Relic Infrastructure (Cloud Integrations) and New Relic Logging.
     handler: src/function.lambda_handler
-    name: newrelic-log-ingestion
+    name: kmullaney-log-ingestion
 
 plugins:
   - serverless-python-requirements

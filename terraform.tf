@@ -5,7 +5,7 @@ terraform {
 variable "service_name" {
   type        = string
   description = "The name of the lambda function and related resources"
-  default     = "newrelic-log-ingestion"
+  default     = "kmullaney-log-ingestion"
 }
 
 variable "nr_license_key" {
@@ -35,7 +35,7 @@ variable "nr_tags" {
 variable "lambda_archive" {
   type        = string
   description = "The path to the lambda archive, the lambda will be build here if the build_lambda variable is true."
-  default     = "temp/newrelic-log-ingestion.zip"
+  default     = "temp/kmullaney-log-ingestion.zip"
 }
 
 variable "build_lambda" {
@@ -47,7 +47,7 @@ variable "build_lambda" {
 variable "lambda_image_name" {
   type        = string
   description = "Created temporary docker image name. Might need to specify if using the module more than once."
-  default     = "newrelic-log-ingestion"
+  default     = "kmullaney-log-ingestion"
 }
 
 variable "memory_size" {
