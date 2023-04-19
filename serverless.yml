@@ -11,12 +11,12 @@ provider:
   logRetentionInDays: 14
   tags:
     owner: kmullaney
-    reason: ticket
-    description: "00056260"
+    reason: case
+    description: "00106959"
   stackTags:
     owner: kmullaney
-    reason: ticket
-    description: "00056260"
+    reason: case
+    description: "00106959"
   # Uncomment this line to use your own IAM role
   #role: arn:aws:iam::YourAccountNumber:role/YourIamRole
   environment:
