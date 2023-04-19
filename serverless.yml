@@ -8,6 +8,7 @@ provider:
   runtime: python3.9
   stage: dev
   timeout: 30
+  logRetentionInDays: 14
   tags:
     owner: kmullaney
     reason: ticket
@@ -16,10 +17,8 @@ provider:
     owner: kmullaney
     reason: ticket
     description: "00056260"
-
   # Uncomment this line to use your own IAM role
   #role: arn:aws:iam::YourAccountNumber:role/YourIamRole
-
   environment:
     # Determines if logs are forwarded to New Relic Infrastructure
     INFRA_ENABLED: ${env:INFRA_ENABLED, "True"}
