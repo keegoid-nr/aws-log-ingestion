@@ -603,7 +603,7 @@ def _get_trace_id(message_str):
 
     v2-str (.NET, Ruby, Go):
         [2, "NR_LAMBDA_MONITORING", {metadata_dict}, "<base64_gzip>"]
-        Decompressed payload: {"analytic_event_data": ..., "span_event_data": ...}  (flat, no "data" wrapper)
+        Decompressed payload: flat dict — no "data" wrapper.
 
     v2-dict (Java NewRelicAgentJava):
         [2, "NR_LAMBDA_MONITORING", {metadata_dict}, {data_dict}]
