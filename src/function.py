@@ -34,6 +34,7 @@ For more detailed documentation, check New Relic's documentation site:
 https://docs.newrelic.com/
 """
 
+import asyncio
 import datetime
 import gzip
 import json
@@ -41,13 +42,11 @@ import logging
 import os
 import re
 import time
-
 from base64 import b64decode
 from enum import Enum
 from urllib import request
 
 import aiohttp
-import asyncio
 
 logger = logging.getLogger()
 
