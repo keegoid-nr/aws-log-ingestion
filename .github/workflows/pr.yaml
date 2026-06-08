@@ -2,6 +2,9 @@ name: New Relic - AWS Logs Ingestion - Pull Request
 
 on: [pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     strategy:
@@ -11,12 +14,12 @@ jobs:
         os: [ubuntu-22.04]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Poetry
-        uses: snok/install-poetry@v1
+        uses: snok/install-poetry@a783c322200f0519c7926aa6faa857c4e23e9263 # v1
         with:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install Project
@@ -25,6 +28,7 @@ jobs:
         run: |
           poetry run flake8 src test
           poetry run black --check src test
+
   test:
     strategy:
       matrix:
@@ -33,12 +37,12 @@ jobs:
         os: [ubuntu-22.04]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Poetry
-        uses: snok/install-poetry@v1
+        uses: snok/install-poetry@a783c322200f0519c7926aa6faa857c4e23e9263 # v1
       - name: Install Project
         run: poetry install --no-interaction
       - name: Test

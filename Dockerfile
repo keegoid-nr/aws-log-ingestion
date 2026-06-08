@@ -1,6 +1,9 @@
-FROM python:3.13.4
-RUN apt-get update
-RUN apt-get install -y zip
+FROM python:3.13-slim
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends zip && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /build
 COPY src/requirements.txt .
